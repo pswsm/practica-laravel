@@ -1,0 +1,16 @@
+
+<h3>Add a new player</h3>
+<form method="post" action="/teams/{{ $team->id }}/addPlayer">
+	@csrf
+	<div class="form-group">
+		<label class="form-labe" for="player2add">Select a player to add to the team</label>
+		<select id="player2add" class="form-select" name="player2add">
+		@foreach($playersWithoutTeam as $player)
+			<option value="{{ $player->id }}">{{ $player->name }} {{ $player->lastName }}</option>
+		@endforeach
+		</select>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Add player</button>
+	</div>
+</form>

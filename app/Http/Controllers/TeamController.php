@@ -23,18 +23,20 @@ class TeamController extends Controller
 	public function edit(Team $team, Request $request) {
 		try {
 			$validation = $request->validateWithBag('post', [
-				'name' => ['required', 'unique:App\Models\Team,name'],
+				'name' => ['required'],
 				'coach' => ['required'],
 				'budget' => ['required', 'numeric'],
 				'category' => ['required'],
 			]);
 			$team->update($validation);
 			$message = 'Team updated correctly!';
-			return view('teams.form', compact('team', 'message'));
+			$class = 'success';
+			return view('teams.form', compact('team', 'message', 'class'));
 		} catch (\Exception $error) {
 			// var_dump($th);
+			$class = 'danger';
 			$message = 'Eror updating team: ' . $error->getMessage();
-			return view('teams.form', compact('team', 'message'));
+			return view('teams.form', compact('team', 'message', 'class'));
 		}
 	}
 }

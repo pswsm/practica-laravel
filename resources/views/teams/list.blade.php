@@ -16,6 +16,7 @@
 			<th>Coach</th>
 			<th>Category</th>
 			<th>Yearly Budget</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,6 +27,10 @@
 			<td>{{ $team->coach }}</td>
 			<td>{{ $team->category }}</td>
 			<td>{{ $team->budget }}</td>
+			<td>
+				<a href="/teams/{{ $team->id }}/edit"><button class="btn btn-outline-warning">Edit</button></a>
+				<a href="/teams/{{ $team->id }}/delete"><button class="btn btn-outline-danger">Remove</button></a>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>

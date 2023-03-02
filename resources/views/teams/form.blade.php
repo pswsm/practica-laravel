@@ -6,7 +6,7 @@
 	<p>No team found!</p>
 @else
 @isset($message)
-<p class='message'>{{ $message }}</p>
+<p class='text-{{$class}}'><strong>{{ $message }}</strong></p>
 @endisset
 <form method="POST" action="/teams/{{$team->id}}/edit">
 	<fieldset>

@@ -10,7 +10,7 @@ class Player extends Model
 	use HasFactory;
 
 	public $timestamps = false;
-	protected $fillable = ['name', 'surname', 'yearOfBirth', 'salary'];
+	protected $fillable = ['name', 'surname', 'yearOfBirth', 'salary', 'team_id'];
 
 	public function team() {
 		return $this->belongsTo(Team::class);

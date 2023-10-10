@@ -1,6 +1,9 @@
 @extends('layout')
 @section('content')
 <h1 class="display-1"></h1>
+@isset($message)
+<p class='text-success'>{{ $message }}</p>
+@endisset
 <div class="mx-auto text-center">
 	<a href="/players/add"><button class="btn btn-primary" type="button">Add player</button></a>
 </div>

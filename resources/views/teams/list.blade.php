@@ -1,6 +1,12 @@
 @extends('layout')
 @section('content')
 <h1 class="display-1"></h1>
+@isset($message)
+<p class='text-success'>{{ $message }}</p>
+@endisset
+<div class="mx-auto text-center">
+	<a href="/teams/add"><button class="btn btn-primary" type="button">Add team</button></a>
+</div>
 <hr class="my-4">
 
 <!--------- Team number ------>
